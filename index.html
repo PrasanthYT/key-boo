@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key BOO - Home</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <audio id="backgroundMusic" loop>
+    <source src="./assets/audio/Leo-Title-Promo-BGM.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+  </audio>
+  <div class="main">
+    <img id="music" id="toggleButton" onclick="toggleBackgroundMusic();" src="./assets/volume-x.svg" alt="">
+    <img id="logo" src="./assets/key_boo.png" alt="">
+    <div class="creator">
+      <p>Follow the creator</p>
+      <img onclick="gitHub()" src="./assets/linkedin.svg" alt="">
+      <img onclick="linkedIn()" src="./assets/github.svg" alt="">
+    </div>
+    <input type="text" id="playerName" placeholder="Enter your name">
+    <button onclick="startGame()" class="button-82-pushable" role="button">
+      <span class="button-82-shadow"></span>
+      <span class="button-82-edge"></span>
+      <span class="button-82-front text">
+        Start Game
+      </span>
+    </button>
+    <div class="inst">
+      <img src="./assets/alert-circle.svg" alt="">
+      <p onclick="instruction()">How to play Key BOO?</p>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

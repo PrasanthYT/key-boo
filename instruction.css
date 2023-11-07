@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+body{
+  background-color: #0C356A;
+  font-family: 'Source Code Pro', monospace;
+  background-image: url('./assets/bacground.png');
+  background-repeat: no-repeat;
+}
+
+img{
+  width: 5%;
+  position: relative;
+  left: 47%;
+  top: 25px;
+}
+
+h1{
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+.main{
+    background-color: white;
+    height: 450px;
+    width: 50%;
+    border-radius: 10px;
+    position: relative;
+    top: 30px;
+    left: 25%;
+}
+
+#one{
+    list-style: url('./assets/Point.png');
+    margin-left: 20px;
+}
+
+#two{
+    list-style: url('./assets/Point-1.png');
+    margin-left: 20px;
+}
+
+#three{
+    list-style: url('./assets/Point-2.png');
+    margin-left: 20px;
+}
+
+#four{
+    list-style: url('./assets/Point-3.png');
+    margin-left: 20px;
+}
+
+ul{
+    text-align: left;
+    position: relative;
+    top: 40px;
+}
+
+#one p{
+    position: relative;
+    bottom: 25px;
+    left: 10px;
+}
+
+#two p{
+    position: relative;
+    bottom: 15px;
+    left: 10px;
+}
+
+#three p{
+    position: relative;
+    bottom: 25px;
+    left: 10px;
+}
+
+#four p{
+    position: relative;
+    bottom: 15px;
+    left: 10px;
+}
+
+button{
+    height: 50px;
+    width: 300px;
+    color: white;
+    position: relative;
+    left: 615px;
+    top: 50px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: large;
+    font-family: 'Source Code Pro', monospace;
+    border: 2px solid #FFC436;
+}
+
+@media (max-width: 768px) {
+    button {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    body {
+        font-size: 16px;
+    }
+    .main{
+        height: 550px;
+    }
+}
+
+@media (min-width: 768px) {
+    button {
+      right: 550px;
+    }
+}
+  
+  
