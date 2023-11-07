@@ -27,22 +27,14 @@ function linkedIn(){
 }
 
 const backgroundMusic = document.getElementById("backgroundMusic");
-const toggleButton = document.getElementById("toggleButton");
+const musicIcon = document.getElementById("musicIcon");
 
 function toggleBackgroundMusic() {
-    if (backgroundMusic.paused) {
-      playBackgroundMusic();
-    } else {
-      pauseBackgroundMusic();
-    }
-}
-
-function playBackgroundMusic() {
+  if (backgroundMusic.paused) {
     backgroundMusic.play();
-    toggleButton.textContent = "Pause";
-}
-
-function pauseBackgroundMusic() {
+    musicIcon.src = "./assets/volume-2.svg";
+  } else {
     backgroundMusic.pause();
-    toggleButton.textContent = "Play";
+    musicIcon.src = "./assets/volume-x.svg";
+  }
 }
