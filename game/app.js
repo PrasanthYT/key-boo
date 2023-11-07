@@ -151,11 +151,6 @@ function gameover() {
   resetGame();
 }
 
-
-
-
-
-
 function startNewGame() {
   gameActive = true; // Set game state to active
   const popup = document.querySelector(".popup");
