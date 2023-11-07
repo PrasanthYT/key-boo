@@ -27,7 +27,7 @@ function linkedIn(){
 }
 
 const backgroundMusic = document.getElementById("backgroundMusic");
-const musicIcon = document.getElementById("musicIcon");
+const musicIcon = document.getElementById("music");
 
 function toggleBackgroundMusic() {
   if (backgroundMusic.paused) {
