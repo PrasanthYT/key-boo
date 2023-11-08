@@ -205,7 +205,7 @@ body{
 
 #music{
   position: absolute;
-  left: 49%;
+  left: 50%;
 }
 
 @media (max-width: 768px) {
