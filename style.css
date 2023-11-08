@@ -136,6 +136,7 @@ body{
 
 .inst{
   display: flex;
+  display: inline-block;
   flex-direction: column;
   position: relative;
   right: 20px;
@@ -147,6 +148,7 @@ body{
   position: relative;
   left: 670px;
   top: 25px;
+  display: inline-block;
 }
 
 .inst p{
