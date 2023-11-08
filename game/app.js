@@ -1,8 +1,8 @@
 const keys = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 const timestamps = [];
 let score = 0;
-let timeLimit = 5; // Initial time limit in seconds
-let difficultyMultiplier = 1; // Initial difficulty multiplier
+let timeLimit = 5;
+let difficultyMultiplier = 1;
 
 const scoreElement = document.getElementById("score");
 const timeLimitElement = document.getElementById("time-limit");
@@ -12,7 +12,6 @@ const playerNameDisplay = document.getElementById("playerNameDisplay");
 playerNameDisplay.textContent = `Player Name: ${storedPlayerName}`;
 
 const gameOverMusic = document.getElementById("gameOverMusic");
-const keyPressSound = document.getElementById("kepressed");
 
 function playGameOverMusic() {
     gameOverMusic.play();
@@ -21,11 +20,6 @@ function playGameOverMusic() {
 function stopGameOverMusic() {
     gameOverMusic.pause();
     gameOverMusic.currentTime = 0;
-}
-
-function playKeyPressSound() {
-  keyPressSound.currentTime = 0;
-  keyPressSound.play();
 }
 
 function getTimestamp() {
@@ -41,14 +35,12 @@ function getRandomKey() {
 }
 
 function targetRandomKey() {
-  removeSelectedClassFromKeys(); // Reset the selected class from all keys
+  removeSelectedClassFromKeys();
   const key = getRandomKey();
   const keyElement = document.getElementById(key);
   keyElement.classList.add("selected");
-
-  // Set time limit and score for each key
   keyElement.dataset.timeLimit = timeLimit;
-  keyElement.dataset.score = getRandomNumber(1, 5); // Set a random score for each key
+  keyElement.dataset.score = getRandomNumber(1, 5);
 }
 
 function updateScore() {
@@ -56,12 +48,11 @@ function updateScore() {
 }
 
 function updateDifficulty() {
-  timeLimit = Math.max(timeLimit - difficultyMultiplier, 1); // Ensure time limit doesn't go below 1
-  difficultyMultiplier += 0.1; // Increase difficulty for the next round
+  timeLimit = Math.max(timeLimit - difficultyMultiplier, 1);
+  difficultyMultiplier += 0.1;
 }
 
 function resetGame() {
-  // Reset game state
   score = 0;
   timeLimit = 5;
   difficultyMultiplier = 1;
@@ -88,19 +79,15 @@ function startTimer() {
           timeLimit--;
       }
   }, 1000);
-  return timer; // Return the timer value
+  return timer;
 }
 
-let timer; // Declare timer outside the function to make it accessible globally
+let timer;
 let gameActive = false;
 document.addEventListener("keyup", (event) => {
   if (!gameActive) {
-      return; // Do nothing if the game is not active
+      return;
   }
-
-  // Play sound when keys are pressed
-  playKeyPressSound();
-
   const keyPressed = String.fromCharCode(event.keyCode);
   const keyElement = document.getElementById(keyPressed);
   const highlightedKey = document.querySelector(".selected");
@@ -131,8 +118,8 @@ document.addEventListener("keyup", (event) => {
 });
 
 function gameover() {
-  gameActive = false; // Set game state to inactive
-  clearInterval(timer); // Stop the timer
+  gameActive = false;
+  clearInterval(timer);
   const endTime = Date.now();
   const timeTakenSeconds = Math.floor((endTime - timestamps[1]) / 1000);
   const timeTakenFormatted = timeTakenSeconds < 10 ? `0${timeTakenSeconds}` : timeTakenSeconds;
@@ -153,22 +140,18 @@ function gameover() {
   const popup = document.createElement("div");
   popup.classList.add("popup");
   popup.innerHTML = popupContent;
-
   document.body.appendChild(popup);
-
-  // Reset game state
   removeSelectedClassFromKeys();
   resetGame();
 }
 
 function startNewGame() {
-  gameActive = true; // Set game state to active
+  gameActive = true;
   const popup = document.querySelector(".popup");
   if (popup) {
       document.body.removeChild(popup);
   }
   stopGameOverMusic();
-  // Reset scores and other items
   score = 0;
   timeLimit = 5;
   difficultyMultiplier = 1;
@@ -185,25 +168,20 @@ function displayCountdownPopup(countdown) {
   const popup = document.createElement("div");
   popup.classList.add("popup");
   popup.innerHTML = popupContent;
-
   document.body.appendChild(popup);
-
   setTimeout(() => {
     document.body.removeChild(popup);
   }, 1000);
 }
 
 function startGame() {
-  // Reset game state
-  gameActive = true;  // Set game state to active
+  gameActive = true;
   score = 0;
   timeLimit = 5;
   difficultyMultiplier = 1;
   updateScore();
   updateDifficulty();
   targetRandomKey();
-
-  // Display countdown before starting the game
   let countdown = 3;
   displayCountdownPopup(countdown);
 
@@ -212,13 +190,10 @@ function startGame() {
       countdown--;
       displayCountdownPopup(countdown);
     } else {
-      // Start the game after the countdown
       clearInterval(countdownInterval);
       timer = startTimer();
     }
   }, 1000);
 }
-
-
 
 document.addEventListener("DOMContentLoaded", startGame);
