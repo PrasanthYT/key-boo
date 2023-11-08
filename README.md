@@ -1,5 +1,5 @@
 # Key BOO
-<img src="./asssets/key_boo.png" width="10%"/>
+<img src="./assets/key_boo.png" width="10%">
 Welcome to Key BOO, a fun and challenging typing game where you can test and improve your keyboard skills.
 
 ## How to Play
