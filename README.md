@@ -1,5 +1,5 @@
 # Key BOO
-![KeyBOO](./assets/key_boo.png)  
+![KeyBOO](https://prasanthj2023.github.io/key-boo/assets/key_boo.png)  
 Welcome to Key BOO, a fun and challenging typing game where you can test and improve your keyboard skills.
 
 ## How to Play
