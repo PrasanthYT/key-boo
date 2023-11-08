@@ -12,6 +12,7 @@ const playerNameDisplay = document.getElementById("playerNameDisplay");
 playerNameDisplay.textContent = `Player Name: ${storedPlayerName}`;
 
 const gameOverMusic = document.getElementById("gameOverMusic");
+const keyPressSound = new Audio('./assets/audio/keys_sound.mp3')
 
 function playGameOverMusic() {
     gameOverMusic.play();
@@ -20,6 +21,11 @@ function playGameOverMusic() {
 function stopGameOverMusic() {
     gameOverMusic.pause();
     gameOverMusic.currentTime = 0;
+}
+
+function playKeyPressSound() {
+  keyPressSound.currentTime = 0;
+  keyPressSound.play();
 }
 
 function getTimestamp() {
@@ -89,34 +95,38 @@ let timer; // Declare timer outside the function to make it accessible globally
 let gameActive = false;
 document.addEventListener("keyup", (event) => {
   if (!gameActive) {
-    return; // Do nothing if the game is not active
+      return; // Do nothing if the game is not active
   }
+
+  // Play sound when keys are pressed
+  playKeyPressSound();
+
   const keyPressed = String.fromCharCode(event.keyCode);
   const keyElement = document.getElementById(keyPressed);
   const highlightedKey = document.querySelector(".selected");
 
   keyElement.classList.add("hit");
   keyElement.addEventListener("animationend", () => {
-    keyElement.classList.remove("hit");
+      keyElement.classList.remove("hit");
   });
 
   if (keyPressed === highlightedKey.innerHTML) {
-    timestamps.unshift(getTimestamp());
-    const elapsedTime = timestamps[0] - timestamps[1];
+      timestamps.unshift(getTimestamp());
+      const elapsedTime = timestamps[0] - timestamps[1];
 
-    const keyTimeLimit = parseInt(highlightedKey.dataset.timeLimit, 10);
-    const keyScore = parseInt(highlightedKey.dataset.score, 10);
+      const keyTimeLimit = parseInt(highlightedKey.dataset.timeLimit, 10);
+      const keyScore = parseInt(highlightedKey.dataset.score, 10);
 
-    if (elapsedTime <= keyTimeLimit * 1000) {
-      score += keyScore;
-      updateScore();
-      updateDifficulty();
-      timeLimit = keyTimeLimit;
-      highlightedKey.classList.remove("selected");
-      targetRandomKey();
-    }
+      if (elapsedTime <= keyTimeLimit * 1000) {
+          score += keyScore;
+          updateScore();
+          updateDifficulty();
+          timeLimit = keyTimeLimit;
+          highlightedKey.classList.remove("selected");
+          targetRandomKey();
+      }
   } else {
-    gameover();
+      gameover();
   }
 });
 
