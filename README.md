@@ -1,5 +1,5 @@
 # Key BOO
-
+![KeyBOO](./assets/key_boo.png)  
 Welcome to Key BOO, a fun and challenging typing game where you can test and improve your keyboard skills.
 
 ## How to Play
@@ -52,4 +52,4 @@ Welcome to Key BOO, a fun and challenging typing game where you can test and imp
 
 This project is licensed under the [MIT License](LICENSE).
 
-Enjoy playing Keyboard Master! 🚀
+Enjoy playing Key BOO! 🚀
