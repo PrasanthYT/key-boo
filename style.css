@@ -183,33 +183,3 @@ body{
   position: absolute;
   left: 49.5%;
 }
-
-@media (max-width: 768px) {
-  /* Mobile styles go here */
-  .main img {
-    width: 20%; /* Adjust image size for smaller screens */
-    left: 50%; /* Center the image horizontally */
-    transform: translateX(-50%);
-  }
-
-  .main input {
-    margin: 10% auto; /* Adjust margin for smaller screens */
-  }
-
-  .button-82-pushable {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .inst {
-    right: 10px; /* Adjust position for smaller screens */
-  }
-
-  .inst p {
-    margin-left: 10px; /* Adjust margin for smaller screens */
-  }
-
-  .creator {
-    top: 30px; /* Adjust position for smaller screens */
-  }
-}
