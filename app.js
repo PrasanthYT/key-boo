@@ -19,11 +19,11 @@ function returnHome(){
 }
 
 function gitHub(){
-  window.location.href = 'https://github.com/prasanthj2023';
+  window.open('https://github.com/prasanthj2023', '_blank');
 }
 
 function linkedIn(){
-  window.location.href = 'https://github.com/prasanthj2023';
+  window.open('https://github.com/prasanthj2023', '_blank');
 }
 
 const backgroundMusic = document.getElementById("backgroundMusic");
