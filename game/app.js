@@ -34,6 +34,13 @@ function getRandomKey() {
   return keys[getRandomNumber(0, keys.length - 1)];
 }
 
+function removeSelectedClassFromKeys() {
+  keys.forEach((key) => {
+    const keyElement = document.getElementById(key);
+    keyElement.classList.remove("selected");
+  });
+}
+
 function targetRandomKey() {
   removeSelectedClassFromKeys();
   const key = getRandomKey();
@@ -59,13 +66,6 @@ function resetGame() {
   updateScore();
   updateDifficulty();
   targetRandomKey();
-}
-
-function removeSelectedClassFromKeys() {
-  keys.forEach((key) => {
-    const keyElement = document.getElementById(key);
-    keyElement.classList.remove("selected");
-  });
 }
 
 function startTimer() {
