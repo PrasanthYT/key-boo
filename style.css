@@ -4,6 +4,7 @@ body{
   font-family: 'Source Code Pro', monospace;
   background-image: url('./assets/bacground.png');
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 #logo {
