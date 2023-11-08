@@ -1,5 +1,5 @@
 # Key BOO
-<img src="./assets/key_boo.png" width="10%">
+<img src="./asssets/key_boo.png" width="10%"/>
 Welcome to Key BOO, a fun and challenging typing game where you can test and improve your keyboard skills.
 
 ## How to Play
@@ -41,11 +41,11 @@ Welcome to Key BOO, a fun and challenging typing game where you can test and imp
 
 ## Author
 
-- Prasanth(#)
+- [Prasanth](https://github.com/prasanthj2023)(#) 
 
 ## Credits
 
-- Background music by Anirudh Ravichander(#)
+- Background music by [Anirudh Ravichander](https://en.wikipedia.org/wiki/Anirudh_Ravichander)(#)
 
 
 ## License
