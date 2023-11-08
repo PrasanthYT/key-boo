@@ -12,7 +12,7 @@ const playerNameDisplay = document.getElementById("playerNameDisplay");
 playerNameDisplay.textContent = `Player Name: ${storedPlayerName}`;
 
 const gameOverMusic = document.getElementById("gameOverMusic");
-const keyPressSound = new Audio('./assets/audio/keys_sound.mp3')
+const keyPressSound = new Audio('../assets/audio/keys_sound.mp3')
 
 function playGameOverMusic() {
     gameOverMusic.play();
