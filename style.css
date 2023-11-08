@@ -138,11 +138,15 @@ body{
   display: flex;
   flex-direction: column;
   position: relative;
-  right: 30px;
+  right: 40px;
+  top: -20px;
 }
 
 .inst img{
   width: 1.5%;
+  position: relative;
+  left: 670px;
+  top: 25px;
 }
 
 .inst p{
