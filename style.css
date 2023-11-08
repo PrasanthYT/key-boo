@@ -136,7 +136,6 @@ body{
 
 .inst{
   display: flex;
-  display: inline-block;
   flex-direction: column;
   position: relative;
   right: 20px;
