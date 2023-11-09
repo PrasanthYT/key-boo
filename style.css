@@ -189,3 +189,50 @@ body{
   position: absolute;
   left: 49.5%;
 }
+
+#mobilePopup{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px){
+  .main input{
+    height: 30px;
+    width: 250px;
+    position: relative;
+    left: 10px;
+  }
+  .creator img{
+    width: 2%;
+  }
+  .creator{
+    position: relative;
+    left: 13px;
+    top: 35px;
+  }
+  .button-82-pushable{
+    position: relative;
+    left: 320px;
+    top: -5px;
+  }
+  .inst img{
+    width: 3%;
+    position: relative;
+    left: 290px;
+  }
+  .inst{
+    position: relative;
+    right: 15px;
+    top: 3px;
+  }
+}

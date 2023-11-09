@@ -40,9 +40,7 @@ function toggleBackgroundMusic() {
 }
 
 function checkScreenWidth() {
-  const isMobile = window.innerWidth < 1022;
-
-  console.log("Is Mobile: ", isMobile);
+  const isMobile = window.innerWidth < 766;
 
   if (isMobile) {
     showMobilePopup();
@@ -52,32 +50,12 @@ function checkScreenWidth() {
 }
 
 function showMobilePopup() {
-  const popupContent = `
-    <div id="mobilePopup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 1.0); display: flex; justify-content: center; align-items: center; color: white; font-size: 24px;">
-      <p>This website is best viewed on a larger screen. Please use a desktop or tablet for the best experience.</p>
-    </div>
-  `;
-
-  const popup = document.createElement("div");
-  popup.innerHTML = popupContent;
-  popup.id = "mobilePopup";
-  document.body.appendChild(popup);
-
-  console.log("Popup added");
-
-  popup.addEventListener("click", () => {
-    removeMobilePopup();
-  });
+  document.getElementById("mobilePopup").style.display = "flex";
 }
 
 function removeMobilePopup() {
-  const existingPopup = document.getElementById("mobilePopup");
-  if (existingPopup) {
-    document.body.removeChild(existingPopup);
-    console.log("Popup removed");
-  }
+  document.getElementById("mobilePopup").style.display = "none";
 }
 
 window.addEventListener("DOMContentLoaded", checkScreenWidth);
 window.addEventListener("resize", checkScreenWidth);
-
